@@ -1,0 +1,63 @@
+.registration-form {
+  @apply bg-white px-6 py-10 flex flex-col justify-center w-full max-w-2xl mx-auto;
+}
+
+.registration-form__header {
+  @apply mb-6;
+}
+
+.registration-form__logo {
+  @apply h-6 mb-4;
+}
+
+.registration-form__title {
+  @apply text-2xl font-semibold mb-1;
+}
+
+.registration-form__subtitle {
+  @apply text-gray-500 text-sm;
+}
+
+.registration-form__form {
+  @apply space-y-6;
+}
+
+.registration-form__grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.registration-form__checkboxes {
+  @apply space-y-4;
+}
+
+.registration-form__terms-text {
+  @apply text-sm leading-snug;
+}
+
+.registration-form__link {
+  @apply underline text-blue-600 hover:text-blue-700 transition-colors duration-200;
+}
+
+.registration-form__actions {
+  @apply space-y-4;
+}
+
+.registration-form__forgot-password {
+  @apply flex justify-between items-center;
+}
+
+.registration-form__error {
+  @apply text-red-500 text-sm text-center;
+}
+
+.registration-form__submit-button {
+  @apply w-full;
+}
+
+.registration-form__google-button {
+  @apply w-full flex items-center justify-center gap-2;
+}
+
+.registration-form__login-link {
+  @apply text-center text-sm;
+}

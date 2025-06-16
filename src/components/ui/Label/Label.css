@@ -1,0 +1,7 @@
+.label-base {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.label-required {
+  @apply text-red-500 ml-1;
+}

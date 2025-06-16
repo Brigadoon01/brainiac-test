@@ -1,0 +1,22 @@
+.input-wrapper {
+  @apply space-y-1;
+}
+
+.input-base {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md text-sm
+         placeholder:text-gray-400 
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+         transition-colors duration-200;
+}
+
+.input-error {
+  @apply border-red-500 focus:ring-red-500;
+}
+
+.input-disabled {
+  @apply bg-gray-50 text-gray-500 cursor-not-allowed;
+}
+
+.input-error-message {
+  @apply text-red-500 text-xs;
+}

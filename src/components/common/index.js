@@ -1,0 +1,1 @@
+export { default as AppStoreBadges } from './AppStoreBadges/AppStoreBadges';

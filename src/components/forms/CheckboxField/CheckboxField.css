@@ -1,0 +1,11 @@
+.checkbox-field {
+  @apply space-y-1;
+}
+
+.checkbox-field-content {
+  @apply flex items-start space-x-2;
+}
+
+.checkbox-field-label {
+  @apply mb-0;
+}

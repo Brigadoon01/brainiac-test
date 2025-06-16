@@ -1,0 +1,53 @@
+.registration-page {
+  @apply min-h-screen;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.registration-page__container {
+  @apply h-full grid;
+  grid-template-columns: 1fr 1.25fr;
+}
+
+/* Mobile responsive - single column layout */
+@media (max-width: 767px) {
+  .registration-page__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.registration-page__hero {
+  @apply h-full overflow-hidden;
+}
+
+.registration-page__form {
+  @apply flex flex-col h-full overflow-auto;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.registration-page__form-content {
+  @apply flex-1 flex flex-col justify-center;
+  min-height: 100%;
+}
+
+.registration-page__app-badges {
+  @apply mt-1;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 767px) {
+  .registration-page__form {
+    @apply px-4 py-6;
+  }
+  
+  .registration-page__form-content {
+    @apply justify-start;
+    padding-top: 2rem;
+  }
+}
