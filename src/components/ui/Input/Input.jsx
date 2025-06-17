@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Input.css';
 
 const Input = ({ 
   id, 
@@ -23,25 +24,11 @@ const Input = ({
     }
   };
 
-  const wrapperStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.25rem'
-  };
-
-  const inputStyles = {
-    width: '100%',
-    padding: icon ? '0.5rem 2.5rem 0.5rem 0.75rem' : '0.5rem 0.75rem',
-    border: error ? '1px solid #ef4444' : '1px solid #d1d5db',
-    borderRadius: '0.375rem',
-    fontSize: '0.875rem',
-    backgroundColor: disabled ? '#f9fafb' : 'white',
-    color: disabled ? '#6b7280' : '#000',
-    cursor: disabled ? 'not-allowed' : 'text',
-    outline: 'none',
-    boxShadow: 'none',
-    transition: 'all 0.2s',
-    ...style
+  const getInputClassName = () => {
+    let className = 'input-base';
+    if (error) className += ' input-error';
+    if (disabled) className += ' input-disabled';
+    return className;
   };
 
   const inputContainerStyles = {
@@ -58,14 +45,13 @@ const Input = ({
     fontSize: '1.25rem'
   };
 
-  const errorMessageStyles = {
-    color: '#ef4444',
-    fontSize: '0.75rem',
-    margin: 0
+  const inputStyles = {
+    paddingRight: icon ? '2.5rem' : undefined,
+    ...style
   };
 
   return (
-    <div style={wrapperStyles}>
+    <div className="input-wrapper">
       <div style={inputContainerStyles}>
         <input
           id={id}
@@ -77,17 +63,8 @@ const Input = ({
           onChange={handleChange}
           disabled={disabled}
           autoComplete={autoComplete}
+          className={getInputClassName()}
           style={inputStyles}
-          onFocus={(e) => {
-            if (!disabled) {
-              e.target.style.borderColor = error ? '#ef4444' : '#2563eb';
-              e.target.style.boxShadow = error ? '0 0 0 2px rgba(239, 68, 68, 0.2)' : '0 0 0 2px rgba(37, 99, 235, 0.2)';
-            }
-          }}
-          onBlur={(e) => {
-            e.target.style.borderColor = error ? '#ef4444' : '#d1d5db';
-            e.target.style.boxShadow = 'none';
-          }}
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : ariaDescribedBy}
           {...rest}
@@ -99,7 +76,7 @@ const Input = ({
         )}
       </div>
       {error && (
-        <p id={`${id}-error`} style={errorMessageStyles} role="alert">
+        <p id={`${id}-error`} className="input-error-message" role="alert">
           {error}
         </p>
       )}

@@ -1,8 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { HiOutlineCalendarDays } from 'react-icons/hi2';
 import { Button } from '../../ui';
-import { FormField, CheckboxField } from '../../forms';
+import { FormField, CheckboxField, DateInput } from '../../forms';
 import { useForm } from '../../../hooks';
 import { 
   validateEmail, 
@@ -202,15 +201,13 @@ const RegistrationForm = ({ onSubmit, onGoogleSignIn }) => {
             {...getFieldProps(FORM_FIELDS.EMAIL)}
           />
 
-          <FormField
+          <DateInput
             id={FORM_FIELDS.DATE_OF_BIRTH}
+            name={FORM_FIELDS.DATE_OF_BIRTH}
             label="Date of birth (dd/mm/yyyy)"
-            type={INPUT_TYPES.DATE}
-            placeholder=""
             required
             max={maxDate}
             autoComplete="bday"
-            style={{ cursor: 'pointer' }}
             {...getFieldProps(FORM_FIELDS.DATE_OF_BIRTH)}
           />
 
@@ -332,7 +329,18 @@ const RegistrationForm = ({ onSubmit, onGoogleSignIn }) => {
                 justifyContent: 'center', 
                 gap: '0.5rem' ,
                 backgroundColor: '#2D3748', 
-                color: '#ffffff'
+                color: '#ffffff',
+                transition: 'background-color 0.2s'
+              }}
+              onMouseEnter={(e) => {
+                if (!isSubmitting) {
+                  e.target.style.backgroundColor = '#1A202C';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isSubmitting) {
+                  e.target.style.backgroundColor = '#2D3748';
+                }
               }}
             >
               <FcGoogle style={{ width: '1.25rem', height: '1.25rem' }} /> 
