@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the architectural decisions and patterns used in the Brainiac Test registration form application. The project follows senior-level development standards with a focus on maintainability, scalability, and code quality.
+This document outlines the architectural decisions and patterns used in the Brainiac Test registration form application. The project follows industry development standards with a focus on maintainability, scalability, and code quality.
 
 ## Architectural Principles
 
