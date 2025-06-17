@@ -32,34 +32,7 @@ class AuthService {
     }
   }
 
-  /**
-   * Login user
-   * @param {Object} credentials - User login credentials
-   * @returns {Promise<Object>} Login response
-   */
-  async login(credentials) {
-    try {
-      // TODO: Replace with actual API call
-      console.log('Logging in user:', credentials);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Simulate successful response
-      return {
-        success: true,
-        user: {
-          id: 1,
-          email: credentials.email,
-        },
-        token: 'mock-jwt-token',
-      };
-    } catch (error) {
-      console.error('Login failed:', error);
-      throw new Error('Login failed. Please check your credentials.');
-    }
-  }
-
+  
   /**
    * Google OAuth authentication
    * @returns {Promise<Object>} Google auth response
@@ -82,49 +55,7 @@ class AuthService {
     }
   }
 
-  /**
-   * Logout user
-   * @returns {Promise<void>}
-   */
-  async logout() {
-    try {
-      // TODO: Replace with actual API call
-      console.log('Logging out user');
-      
-      // Clear local storage
-      localStorage.removeItem('authToken');
-      localStorage.removeItem('user');
-      
-      return { success: true };
-    } catch (error) {
-      console.error('Logout failed:', error);
-      throw new Error('Logout failed.');
-    }
   }
-
-  /**
-   * Get current user from token
-   * @returns {Object|null} Current user or null
-   */
-  getCurrentUser() {
-    try {
-      const user = localStorage.getItem('user');
-      return user ? JSON.parse(user) : null;
-    } catch (error) {
-      console.error('Failed to get current user:', error);
-      return null;
-    }
-  }
-
-  /**
-   * Check if user is authenticated
-   * @returns {boolean} Authentication status
-   */
-  isAuthenticated() {
-    const token = localStorage.getItem('authToken');
-    return !!token;
-  }
-}
 
 // Create and export singleton instance
 const authService = new AuthService();

@@ -70,7 +70,7 @@ const DateInput = ({
     cursor: disabled ? 'not-allowed' : 'pointer',
     outline: 'none',
     transition: 'border-color 0.2s ease-in-out',
-    height: '2.1rem'
+    height: '2.5rem'
   };
 
   const displayTextStyles = {
